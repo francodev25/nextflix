@@ -4,6 +4,15 @@ PreRequisites
 
 * Node v16
 
+-You can use nvm for better purposes.(Link to Nvm)
+
+TailwindCss Custom Libraries (Watch the tailwind.config.js)
+
+* tailwind-scrollbar-hide
+* tailwindcss-textshadow
+* tailwind-scrollbar
+
+
 
 
 
