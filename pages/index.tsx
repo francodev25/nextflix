@@ -1,15 +1,22 @@
-import type { NextPage } from 'next'
 import requests from '../utils/requests'
 import Head from 'next/head'
 import Header from '../components/Header'
 import Banner from '../components/Banner'
 import { Movie } from '../typings'
+import Row from '../components/Row'
 
 interface Props {
   netflixOriginals: Movie[]
+  trendingNow: Movie[]
+  topRated: Movie[]
+  actionMovies: Movie[]
+  comedyMovies: Movie[]
+  horrorMovies: Movie[]
+  romanceMovies: Movie[]
+  documentaries: Movie[]
 }
 
-const Home = ({netflixOriginals}: Props) => {
+const Home = ({netflixOriginals, trendingNow,topRated,actionMovies,comedyMovies,romanceMovies,documentaries}: Props) => {
   return (
     <div className="relative h-screen bg-gradient-to-b from-gray-900/10 to-[#010511] lg:h-[140vh]">
       <Head>
@@ -17,11 +24,13 @@ const Home = ({netflixOriginals}: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header/>
-      <main>
+      <main className='relative pb-24 lg:space-y-24'>
         {/** Banner */}
         <Banner netflixOriginals={netflixOriginals} />
 
-        <section>
+        <section className='md:space-y-24'>
+          <Row title='Netflix Originals' movies={netflixOriginals}></Row>
+          <Row title='Trending Now' movies={trendingNow}></Row>
           {/** Row */}
           {/** Row */}
           {/** Row */}
