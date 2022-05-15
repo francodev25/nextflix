@@ -25,7 +25,6 @@ const Home = ({netflixOriginals, trendingNow,topRated,actionMovies,comedyMovies,
       </Head>
       <Header/>
       <main className='relative pb-24 lg:space-y-24'>
-        {/** Banner */}
         <Banner netflixOriginals={netflixOriginals} />
 
         <section className='md:space-y-24'>
@@ -36,10 +35,6 @@ const Home = ({netflixOriginals, trendingNow,topRated,actionMovies,comedyMovies,
           <Row title='Comedy' movies={comedyMovies}/>
           <Row title='Romance' movies={romanceMovies}/>
           <Row title='Documentaries' movies={documentaries}/>
-          {/** Row */}
-          {/** Row */}
-          {/** Row */}
-          {/** Row */}
         </section>
       </main>
       {/**Modal */}
