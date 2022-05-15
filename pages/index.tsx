@@ -16,25 +16,33 @@ interface Props {
   documentaries: Movie[]
 }
 
-const Home = ({netflixOriginals, trendingNow,topRated,actionMovies,comedyMovies,romanceMovies,documentaries}: Props) => {
+const Home = ({
+  netflixOriginals,
+  trendingNow,
+  topRated,
+  actionMovies,
+  comedyMovies,
+  romanceMovies,
+  documentaries,
+}: Props) => {
   return (
     <div className="relative h-screen bg-gradient-to-b from-gray-900/10 to-[#010511]">
       <Head>
         <title>Nextflix</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header/>
-      <main className='relative pb-24 lg:space-y-24'>
+      <Header />
+      <main className="relative pb-24 lg:space-y-24">
         <Banner netflixOriginals={netflixOriginals} />
 
-        <section className='md:space-y-24'>
-          <Row title='Netflix Originals' movies={netflixOriginals}></Row>
-          <Row title='Trending Now' movies={trendingNow}></Row>
-          <Row title='Top Rated' movies={topRated}/>
-          <Row title='Action' movies={actionMovies}/>
-          <Row title='Comedy' movies={comedyMovies}/>
-          <Row title='Romance' movies={romanceMovies}/>
-          <Row title='Documentaries' movies={documentaries}/>
+        <section className="md:space-y-24">
+          <Row title="Netflix Originals" movies={netflixOriginals}></Row>
+          <Row title="Trending Now" movies={trendingNow}></Row>
+          <Row title="Top Rated" movies={topRated} />
+          <Row title="Action" movies={actionMovies} />
+          <Row title="Comedy" movies={comedyMovies} />
+          <Row title="Romance" movies={romanceMovies} />
+          <Row title="Documentaries" movies={documentaries} />
         </section>
       </main>
       {/**Modal */}
@@ -45,7 +53,6 @@ const Home = ({netflixOriginals, trendingNow,topRated,actionMovies,comedyMovies,
 export default Home
 
 export const getServerSideProps = async () => {
-
   const [
     netflixOriginals,
     trendingNow,
