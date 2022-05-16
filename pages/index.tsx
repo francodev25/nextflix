@@ -4,6 +4,9 @@ import Header from '../components/Header'
 import Banner from '../components/Banner'
 import { Movie } from '../typings'
 import Row from '../components/Row'
+import { useRecoilValue } from 'recoil'
+import { modalState } from '../atoms/modalAtom'
+import Modal from '../components/Modal'
 
 interface Props {
   netflixOriginals: Movie[]
@@ -25,8 +28,12 @@ const Home = ({
   romanceMovies,
   documentaries,
 }: Props) => {
+
+  console.log(netflixOriginals)
+  const showModal = useRecoilValue(modalState);
+
   return (
-    <div className="relative h-screen bg-gradient-to-b from-gray-900/10 to-[#010511]">
+    <div className="relative h-screen bg-gradient-to-b from-gray-900/10 to-[#010511] lg:h-[140vh]">
       <Head>
         <title>Nextflix</title>
         <link rel="icon" href="/favicon.ico" />
@@ -36,16 +43,17 @@ const Home = ({
         <Banner netflixOriginals={netflixOriginals} />
 
         <section className="md:space-y-24">
-          <Row title="Netflix Originals" movies={netflixOriginals}></Row>
-          <Row title="Trending Now" movies={trendingNow}></Row>
+          <Row title="Netflix Originals" movies={netflixOriginals}/>
+          <Row title="Trending Now" movies={trendingNow}/>
           <Row title="Top Rated" movies={topRated} />
           <Row title="Action" movies={actionMovies} />
           <Row title="Comedy" movies={comedyMovies} />
           <Row title="Romance" movies={romanceMovies} />
-          <Row title="Documentaries" movies={documentaries} />
+          <Row title="Documentaries" movies={documentaries}/>
         </section>
       </main>
       {/**Modal */}
+      {showModal && <Modal/>}
     </div>
   )
 }
