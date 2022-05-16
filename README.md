@@ -13,6 +13,14 @@ TailwindCss Custom Libraries (Watch the tailwind.config.js)
 * tailwind-scrollbar
 
 
+# Environment 
+
+Create .env file with:
+
+Your Api key from [The Movie DB API key](https://developers.themoviedb.org/3/getting-started/introduction)
+NEXT_PUBLIC_API_KEY=
+
+
 
 
 
