@@ -1,30 +1,31 @@
 # NextFlix
 
-PreRequisites
+This is the same site at [Netflix](https://www.netflix.com/ar/) built with Next JS.
 
-* Node v16
+## Pre Requisites :clipboard:
+* **Node** >= v16
 
--You can use nvm for better purposes.(Link to Nvm)
+## Set up :wrench:
+### Environment 
 
-TailwindCss Custom Libraries (Watch the tailwind.config.js)
+Create .env file with:
+
+Your API_KEY from [The Movie DB API key](https://developers.themoviedb.org/3/getting-started/introduction)
+
+NEXT_PUBLIC_API_KEY=
+
+
+#### Recomendations
+
+- You can use for [Node Versions Manager](https://github.com/nvm-sh/nvm) for better development experience.
+
+TailwindCSS Custom Libraries (Watch the tailwind.config.js)
 
 * tailwind-scrollbar-hide
 * tailwindcss-textshadow
 * tailwind-scrollbar
 
-
-# Environment 
-
-Create .env file with:
-
-Your Api key from [The Movie DB API key](https://developers.themoviedb.org/3/getting-started/introduction)
-NEXT_PUBLIC_API_KEY=
-
-
-
-
-
-# Next.js + Tailwind CSS Example
+### Next.js + Tailwind CSS Example
 
 This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
 
