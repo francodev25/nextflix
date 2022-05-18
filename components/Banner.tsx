@@ -1,4 +1,5 @@
-import { InformationCircleIcon, PlayIcon } from '@heroicons/react/outline'
+import { BiInfoCircle } from "react-icons/bi";
+import { FaPlay } from "react-icons/fa";
 
 import { useEffect, useState } from 'react'
 import { baseUrl } from '../constants/movie'
@@ -35,14 +36,14 @@ function Banner({ netflixOriginals }: Props){
         </p>
         <div className="flex space-x-3">
           <button className="bannerButton bg-white text-black">
-            <PlayIcon className="h-4 w-4 text-black md:h-7 md:w-7" />
+            <FaPlay className="h-4 w-4 text-black md:h-6 md:w-6" />
             Play
           </button>
   
           <button
             className="bannerButton bg-[gray]/70"
           >
-            <InformationCircleIcon className="h-5 w-5 md:h-8 md:w-8" /> More Info
+            <BiInfoCircle className="h-5 w-5 md:h-8 md:w-8" /> More Info
           </button>
         </div>
       </div>

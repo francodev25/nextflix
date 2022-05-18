@@ -1,9 +1,10 @@
-import { CheckIcon, ThumbUpIcon, VolumeOffIcon, VolumeUpIcon, XIcon } from '@heroicons/react/outline';
+import { CheckIcon, ThumbUpIcon, VolumeOffIcon, VolumeUpIcon } from '@heroicons/react/outline';
 import MuiModal from '@mui/material/Modal'
 import { useRecoilState } from 'recoil';
 import { modalState, movieState } from '../atoms/modalAtom';
 import ReactPlayer from 'react-player/lazy';
 import { FaPlay } from 'react-icons/fa';
+import { VscChromeClose } from "react-icons/vsc";
 import { useEffect, useState } from 'react';
 import { Element, Genre } from '../typings'
 
@@ -49,17 +50,17 @@ function Modal() {
     <MuiModal
     open={showModal}
     onClose={handleClose}
-    className="fixed !top-7 left-0 right-0 z-50 mx-auto w-full max-w-5xl overflow-hidden overflow-y-scroll rounded-md scrollbar-hide"
+    className="fixed !top-14 left-0 right-0 z-50 mx-auto w-[916px] max-w-5xl overflow-hidden overflow-y-scroll rounded-md scrollbar-hide"
   >
     <>
       <button
-        className="modalButton absolute right-5 top-5 !z-40 h-9 w-9 border-none bg-[#181818] hover:bg-[#181818]"
+        className="modalButton absolute right-5 top-5 !z-40 h-10 w-10 bg-[#181818] hover:bg-[#fff] rounded-[50%] trasition-all duration-500 "
         onClick={handleClose}
       >
-        <XIcon className="h-6 w-6" />
+        <VscChromeClose className="h-10 w-10 p-2 flex items-center justify-center border-[2px] rounded-[50%] border-gray-400 hover:border-none  hover:text-[#181818]" />
       </button>
 
-      <div className="relative pt-[56.25%]">
+      <div className="relative pt-[56.25%] ">
         <ReactPlayer
           url={`https://www.youtube.com/watch?v=${trailer}`}
           width="100%"
@@ -68,29 +69,33 @@ function Modal() {
           playing
           muted={muted}
         />
-        <div className="absolute bottom-10 flex w-full items-center justify-between px-10">
+        <div className="absolute bottom-6 flex w-full items-center justify-between px-10">
           <div className="flex space-x-2">
-            <button className="flex items-center gap-x-2 rounded bg-white px-8 text-xl font-bold text-black transition hover:bg-[#e6e6e6]">
-              <FaPlay className="h-7 w-7 text-black" />
+            <button className="flex items-center gap-x-2 rounded bg-white px-8 py-2 text-xl font-bold text-black transition hover:bg-[#e6e6e6]">
+              <FaPlay className="h-6 w-6 text-black" />
               Play
             </button>
-            <button className="modalButton">
+            <button className="modalButton h-10 w-10 bg-[#181818] hover:bg-[#fff] rounded-[50%] trasition-all duration-500">
               {/* {addedToList ? ( */}
-                <CheckIcon className="h-7 w-7" />
+                <CheckIcon className="h-10 w-10 p-2 flex items-center justify-center border-[2px] rounded-[50%] border-gray-400 hover:border-none  hover:text-[#181818]" />
               {/* ) : ( */}
                 {/* <PlusIcon className="h-7 w-7" /> */}
               {/* )} */}
             </button>
-            <button className="modalButton">
-              <ThumbUpIcon className="h-6 w-6" />
+            <button className="modalButton  h-10 w-10 bg-[#181818] hover:bg-[#fff] rounded-[50%] trasition-all duration-500">
+              <ThumbUpIcon className="h-10 w-10 p-2 flex items-center justify-center border-[2px] rounded-[50%] border-gray-400 hover:border-none  hover:text-[#181818]" />
             </button>
           </div>
-          <button className="modalButton" onClick={() => setMuted(!muted)}>
+          <button
+            className="modalButton h-10 w-10 mr-4 bg-[#181818] hover:bg-[#fff] rounded-[50%] trasition-all duration-500 "
+            onClick={() => setMuted(!muted)}
+            >
             {muted ? (
-              <VolumeOffIcon className="h-6 w-6" />
+              <VolumeOffIcon className="h-10 w-10 p-2 flex items-center justify-center border-[2px] rounded-[50%] border-gray-400 hover:border-none  hover:text-[#181818]" />
             ) : (
-              <VolumeUpIcon className="h-6 w-6" />
+              <VolumeUpIcon className="h-10 w-10 p-2 flex items-center justify-center border-[2px] rounded-[50%] border-gray-400 hover:border-none  hover:text-[#181818]" />
             )}
+
           </button>
         </div>
       </div>
