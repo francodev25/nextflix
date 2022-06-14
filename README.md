@@ -8,12 +8,13 @@ This is the same site at [Netflix](https://www.netflix.com/ar/) built with Next 
 ## Set up :wrench:
 ### Environment 
 
-Create .env file with:
+Create .env.local file with:
 
 Your API_KEY from [The Movie DB API key](https://developers.themoviedb.org/3/getting-started/introduction)
 
+```env
 NEXT_PUBLIC_API_KEY=
-
+```
 
 #### Recomendations
 
@@ -24,7 +25,7 @@ TailwindCSS Custom Libraries (Watch the tailwind.config.js)
 * tailwind-scrollbar-hide
 * tailwindcss-textshadow
 * tailwind-scrollbar
-
+-----
 ### Next.js + Tailwind CSS Example
 
 This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
