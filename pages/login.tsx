@@ -55,6 +55,7 @@ function Login() {
               className={`input ${
                 errors.email && 'border-b-2 border-orange-500'
               }`}
+              autoComplete="off"
               {...register('email', { required: true })}
             />
             {errors.email && (
