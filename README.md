@@ -16,6 +16,8 @@ Your API_KEY from [The Movie DB API key](https://developers.themoviedb.org/3/get
 NEXT_PUBLIC_API_KEY=
 ```
 
+Set Up your Firebase Project
+
 #### Recomendations
 
 - You can use for [Node Versions Manager](https://github.com/nvm-sh/nvm) for better development experience.
