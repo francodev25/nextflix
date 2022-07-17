@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { useRef, useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
+import useAuth from '../hooks/useAuth'
 
 interface Inputs {
   email: string
@@ -8,6 +10,9 @@ interface Inputs {
 }
 
 function Login() {
+  const [login, setLogin] = useState(false)
+  const { signIn, signUp } = useAuth()
+
   const {
     register,
     handleSubmit,
@@ -17,16 +22,17 @@ function Login() {
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     console.log(data)
-    // if (login) {
-    //   await signIn(data.email, data.password)
-    // } else {
-    //   await signUp(data.email, data.password)
-    // }
+    if (login) {
+      await signIn(data.email, data.password)
+    } else {
+      await signUp(data.email, data.password)
+    }
   }
+
   return (
-    <div className="relative flex h-screen w-screen flex-col bg-black md:items-center md:justify-center md:bg-transparent">
+    <div className="relative flex h-screen w-screen flex-col md:items-center md:justify-center">
       <Head>
-        <title>Nextflix</title>
+        <title>Netflix</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Image
@@ -35,16 +41,13 @@ function Login() {
         className="-z-10 !hidden opacity-60 sm:!inline"
         objectFit="cover"
       />
-      <img
-        src="https://rb.gy/ulxxee"
-        className="absolute left-4 top-4 cursor-pointer object-contain md:left-10 md:top-6"
-        width={150}
-        height={150}
-      />
+      <div className="absolute left-2 top-1 h-20 w-44 cursor-pointer md:left-8 md:top-4">
+        <Image src="https://rb.gy/ek4j9f" layout="fill" objectFit="contain" />
+      </div>
 
       <form
         className="relative mt-24 space-y-8 rounded bg-black/75 py-10 px-6 md:mt-0 md:max-w-md md:px-14"
-        // onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(onSubmit)}
       >
         <h1 className="text-4xl font-semibold">Sign In</h1>
         <div className="space-y-4">
@@ -52,14 +55,11 @@ function Login() {
             <input
               type="email"
               placeholder="Email"
-              className={`input ${
-                errors.email && 'border-b-2 border-orange-500'
-              }`}
-              autoComplete="off"
+              className="input"
               {...register('email', { required: true })}
             />
             {errors.email && (
-              <p className="p-1 text-[13px] font-light  text-orange-500">
+              <p className="text-sm  text-orange-500">
                 Please enter a valid email.
               </p>
             )}
@@ -69,12 +69,10 @@ function Login() {
               type="password"
               {...register('password', { required: true })}
               placeholder="Password"
-              className={`input ${
-                errors.password && 'border-b-2 border-orange-500'
-              }`}
+              className="input"
             />
             {errors.password && (
-              <p className="p-1 text-[13px] font-light  text-orange-500">
+              <p className="text-sm  text-orange-500">
                 Your password must contain between 4 and 60 characters.
               </p>
             )}
@@ -82,7 +80,7 @@ function Login() {
         </div>
         <button
           className="w-full rounded bg-[#E50914] py-3 font-semibold"
-          //   onClick={() => setLogin(true)}
+          onClick={() => setLogin(true)}
           type="submit"
         >
           Sign In
@@ -91,7 +89,7 @@ function Login() {
           New to Netflix?{' '}
           <button
             className="cursor-pointer text-white hover:underline"
-            // onClick={() => setLogin(false)}
+            onClick={() => setLogin(false)}
             type="submit"
           >
             Sign up now
