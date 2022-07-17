@@ -2,6 +2,8 @@
 
 This is the same site at [Netflix](https://www.netflix.com/ar/) built with Next JS.
 
+Check this out! : https://nextflix-francodigo25.vercel.app/
+
 ## Pre Requisites :clipboard:
 * **Node** >= v16
 
